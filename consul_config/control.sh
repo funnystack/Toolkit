@@ -4,7 +4,7 @@
 APP_NAME=consul-config
 
 #应用根目录
-APP_HOME=/app/
+APP_HOME=${AONE_APP_PATH}/
 
 #进程ID
 pid=0
@@ -32,7 +32,7 @@ start() {
       echo "================================"
    else
       echo -n "Starting $APP_NAME ..."
-      CMD="python3 /app/heartbeat.py > ${APP_HOME}/${APP_NAME}.log"
+      CMD="python3 /app/heartbeat.py > ${AONE_LOG_PATH}/${APP_NAME}.log"
       sh -c "$CMD"
       checkpid
       if [ $pid -ne 0 ]; then

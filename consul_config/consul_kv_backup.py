@@ -88,6 +88,8 @@ def consul_group_back(consul_server, git_location):
             for key in keys:
                 write_key_backup(key, dc, consul_server, git_location)
 
+def send_ding_alarm(msg):
+    print(msg)
 
 if __name__ == '__main__':
     if not os.path.exists(base_path):
